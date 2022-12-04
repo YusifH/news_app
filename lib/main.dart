@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('News'),
       ),
       body: FutureBuilder(
@@ -42,7 +43,6 @@ class _HomePageState extends State<HomePage> {
           if(snapshot.hasData){
             List<Article> articles = snapshot.data!;
             return ListView.builder(
-              //Now let's create our custom List tile
               itemCount: articles.length,
               itemBuilder: (context, index) =>
                   customListTile(articles[index], context),
