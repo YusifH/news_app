@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/model/article_model.dart';
+import 'package:news_app/pages/article_detail.dart';
 
 Widget customListTile(Article article, BuildContext context) {
   return InkWell(
     onTap: () {
-
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ArticleDetail(article: article)));
     },
     child: Container(
-      margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               blurRadius: 3.0,
@@ -29,32 +33,33 @@ Widget customListTile(Article article, BuildContext context) {
               //let's add the height
 
               image: DecorationImage(
-                  image: NetworkImage(article.urlToImage.toString()), fit: BoxFit.cover),
+                  image: NetworkImage(article.urlToImage.toString()),
+                  fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Container(
-            padding: EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: Text(
               article.source!.name.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Text(
             article.title.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16.0,
             ),
