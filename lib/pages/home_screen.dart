@@ -84,13 +84,18 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 25,
-                          padding: EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                              color: Colors.red
+                        child: InkWell(
+                          onTap: (){
+                            debugPrint(category[index].name);
+                          },
+                          child: Container(
+                            height: 25,
+                            padding: EdgeInsets.all(10),
+                            decoration: const BoxDecoration(
+                                color: Colors.red
+                            ),
+                            child: Text(category[index].name, style: const TextStyle(fontSize: 18),),
                           ),
-                          child: Text(category[index].name, style: const TextStyle(fontSize: 18),),
                         ),
                       );
                     },),
