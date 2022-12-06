@@ -7,7 +7,7 @@ import '../model/article_model.dart';
 
 class ApiService {
   final endPointUrl =
-      "https://newsapi.org/v2/everything?q=tesla&from=2022-11-05&sortBy=publishedAt&apiKey=ebc2dbf97ea8481d8e94089fc685da8a";
+      "https://newsapi.org/v2/everything?q=apple&from=2022-12-05&to=2022-12-05&sortBy=popularity&apiKey=ebc2dbf97ea8481d8e94089fc685da8a";
 
   Future<List<Article>> getArticle() async {
     Response res = await get(Uri.parse(endPointUrl));
