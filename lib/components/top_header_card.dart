@@ -12,11 +12,7 @@ Widget topHeaderCard(Article article, BuildContext context) {
     },
     child: Stack(
      children: [
-       Container(
-         margin: const EdgeInsets.all(20),
-         width: 200,
-         color: Colors.grey.shade50,
-       ),
+
        Container(
          margin: const EdgeInsets.all(20),
          // height: 50,
@@ -27,8 +23,25 @@ Widget topHeaderCard(Article article, BuildContext context) {
                image: NetworkImage(article.urlToImage.toString()),
                fit: BoxFit.cover),
          ),
+         child: Container(
+           decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(15),
+             color: Colors.white10
+           ),
+           child: Align(
+               alignment: Alignment.bottomCenter,
+               child:  Text(
+                 textAlign: TextAlign.center,
+                 article.title.toString(),
+                 style: const TextStyle(
+                     fontWeight: FontWeight.bold,
+                     fontSize: 14.0,
+                     color: Colors.white
+                 ),
+               )
+           ),
+         )
        ),
-
      ],
     )
   );

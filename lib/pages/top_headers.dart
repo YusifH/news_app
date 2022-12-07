@@ -34,9 +34,7 @@ class _TopHeadersState extends State<TopHeaders> {
             )
           );
         }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        return const SizedBox();
       },
     );
   }
